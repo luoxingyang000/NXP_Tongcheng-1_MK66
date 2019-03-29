@@ -20,6 +20,7 @@
 "..\output\mk60_systick.o"
 "..\output\mk60_uart.o"
 "..\output\mk60_wdog.o"
+<<<<<<< HEAD
 "..\output\seekfree_18tft.o"
 "..\output\seekfree_28lcd.o"
 "..\output\seekfree_7725.o"
@@ -32,6 +33,9 @@
 "..\output\seekfree_nrf24l01.o"
 "..\output\seekfree_oled.o"
 "..\output\seekfree_tsl1401.o"
+=======
+"..\output\oled_i2c.o"
+>>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
 "..\output\pid.o"
 "..\output\isr.o"
 "..\output\main.o"
