@@ -5,15 +5,15 @@
 
 typedef struct
 {
-	float setpoint;//Éè¶¨Öµ
-	float propertiongain;//±ÈÀıÏµÊı
-	float integrlgain;//»ı·ÖÏµÊı
-	float derivativegain;//Î¢·ÖÏµÊı
-	float lasterror;//Ç°Ò»ÅÄÆ«²î
-	float preerror;//Ç°Á½ÅÄÆ«²î
-	float deadband;//ËÀÇø
-	float result;//Êä³öÖµ
-	float epilson;//Æ«²î¼ì²âãĞÖµ
+	float setpoint;//è®¾å®šå€¼
+	float propertiongain;//æ¯”ä¾‹ç³»æ•°
+	float integrlgain;//ç§¯åˆ†ç³»æ•°
+	float derivativegain;//å¾®åˆ†ç³»æ•°
+	float lasterror;//å‰ä¸€æ‹åå·®
+	float preerror;//å‰ä¸¤æ‹åå·®
+	float deadband;//æ­»åŒº
+	float result;//è¾“å‡ºå€¼
+	float epilson;//åå·®æ£€æµ‹é˜ˆå€¼
 }PID;
 static uint16_t BetaGeneration(float error,float epsilon);
 void PIDgegulation(PID *vPID,float processValue);

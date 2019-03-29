@@ -1,15 +1,15 @@
 /*********************************************************************************************************************
  * COPYRIGHT NOTICE
- * Copyright (c) 2016,��ɿƼ�
+ * Copyright (c) 2016,逐飞科技
  * All rights reserved.
- * ��������QQȺ��179029047
+ * 技术讨论QQ群：179029047
  *
- * �����������ݰ�Ȩ������ɿƼ����У�δ����������������ҵ��;��
- * ��ӭ��λʹ�ò������������޸�����ʱ���뱣����ɿƼ��İ�Ȩ������
+ * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途，
+ * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。
  *
  * @file       		isr.c
- * @brief      		�жϺ�����
- * @company	   		�ɶ���ɿƼ����޹�˾
+ * @brief      		中断函数库
+ * @company	   		成都逐飞科技有限公司
  * @author     		Go For It(1325536866)
  * @version    		v1.0
  * @Software 		IAR 7.7 or MDK 5.17
@@ -23,10 +23,10 @@
 #include "isr.h"
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      PROTA�ж�ִ�к���
+//  @brief      PROTA中断执行函数
 //  @return     void   
 //  @since      v1.0
-//  Sample usage:               ��A�������жϹ����ҷ����жϵ�ʱ����Զ�ִ�иú���
+//  Sample usage:               当A口启用中断功能且发生中断的时候会自动执行该函数
 //-------------------------------------------------------------------------------------------------------------------
 void PORTB_IRQHandler(void)
 {
@@ -40,9 +40,9 @@ void PORTB_IRQHandler(void)
 
 void PORTC_IRQHandler(void)
 {
-    //����жϱ�־��һ�ַ���ֱ�Ӳ����Ĵ�����ÿһλ��Ӧһ������
+    //清除中断标志第一种方法直接操作寄存器，每一位对应一个引脚
 	PORTC->ISFR = 0xffffffff;
-	//ʹ�����Ǳ�д�ĺ궨����������жϵ�����
+	//使用我们编写的宏定义清除发生中断的引脚
 	//PORTC_FLAG_CLR(C1);
     //VSYNC();
 }
@@ -70,47 +70,47 @@ void PIT0_IRQHandler(void)
 
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      UART3�ж�ִ�к���
+//  @brief      UART3中断执行函数
 //  @return     void   
 //  @since      v1.0
-//  Sample usage:               ��UART3�����жϹ����ҷ����жϵ�ʱ����Զ�ִ�иú���
+//  Sample usage:               当UART3启用中断功能且发生中断的时候会自动执行该函数
 //-------------------------------------------------------------------------------------------------------------------
 void UART3_RX_TX_IRQHandler(void)
 {
-    if(UART3->S1 & UART_S1_RDRF_MASK)                                     //�������ݼĴ�����
+    if(UART3->S1 & UART_S1_RDRF_MASK)                                     //接收数据寄存器满
     {
-        //�û���Ҫ������������
+        //用户需要处理接收数据
         //mt9v032_cof_uart_interrupt();
     }
-    if(UART3->S1 & UART_S1_TDRE_MASK )                                    //�������ݼĴ�����
+    if(UART3->S1 & UART_S1_TDRE_MASK )                                    //发送数据寄存器空
     {
-        //�û���Ҫ������������
+        //用户需要处理发送数据
 
     }
 }
 
 void UART4_RX_TX_IRQHandler(void)
 {
-    if(UART4->S1 & UART_S1_RDRF_MASK)                                     //�������ݼĴ�����
+    if(UART4->S1 & UART_S1_RDRF_MASK)                                     //接收数据寄存器满
     {
         
     }
-    if(UART4->S1 & UART_S1_TDRE_MASK )                                    //�������ݼĴ�����
+    if(UART4->S1 & UART_S1_TDRE_MASK )                                    //发送数据寄存器空
     {
-        //�û���Ҫ������������
+        //用户需要处理发送数据
 
     }
 }
 
 
 /*
-�жϺ������ƣ��������ö�Ӧ���ܵ��жϺ���
-Sample usage:��ǰ������DMA0�жϣ�Ȼ��͵�����ȥ���ĸ���DMA0���жϺ������ƣ��ҵ���дһ�������Ƶĺ�������
+中断函数名称，用于设置对应功能的中断函数
+Sample usage:当前启用了DMA0中断，然后就到下面去找哪个是DMA0的中断函数名称，找到后写一个该名称的函数即可
 void DMA0_IRQHandler(void)
 {
     ;
 }
-�ǵý����жϺ������־λ
+记得进入中断后清除标志位
 
 
 DMA0_IRQHandler  

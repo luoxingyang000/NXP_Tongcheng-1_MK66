@@ -49,5 +49,4 @@
 ..\output\isr.o: ..\Libraries\seekfree\SEEKFREE_MMA8451.h
 ..\output\isr.o: ..\Libraries\seekfree\SEEKFREE_MPU6050.h
 ..\output\isr.o: ..\Libraries\seekfree\SEEKFREE_28LCD.h
-..\output\isr.o: ..\Libraries\app\OLED_I2C.h
 ..\output\isr.o: ..\Libraries\app\PID.h

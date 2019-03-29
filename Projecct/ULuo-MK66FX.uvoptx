@@ -140,11 +140,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-<<<<<<< HEAD
-          <Name>-U59300616 -O78 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(4) -TO18 -TC10000000 -TP21 -TDS8004 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN2 -FF0MK_P1M0.FLM -FS00 -FL0100000 -FP0($$Device:MK66FX1M0xxx18$Flash\MK_P1M0.FLM) -FF1MKD256_4KB_SECTOR.FLM -FS110000000 -FL140000 -FP1($$Device:MK66FX1M0xxx18$Flash\MKD256_4KB_SECTOR.FLM)</Name>
-=======
           <Name>-U4294967295 -O78 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(4) -TO18 -TC10000000 -TP21 -TDS8004 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN2 -FF0MK_P1M0.FLM -FS00 -FL0100000 -FP0($$Device:MK66FX1M0xxx18$Flash\MK_P1M0.FLM) -FF1MKD256_4KB_SECTOR.FLM -FS110000000 -FL140000 -FP1($$Device:MK66FX1M0xxx18$Flash\MKD256_4KB_SECTOR.FLM)</Name>
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -489,12 +485,8 @@
   </Group>
 
   <Group>
-<<<<<<< HEAD
     <GroupName>seekfree</GroupName>
-=======
-    <GroupName>app</GroupName>
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -505,13 +497,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-<<<<<<< HEAD
       <PathWithFileName>..\Libraries\seekfree\SEEKFREE_18TFT.c</PathWithFileName>
       <FilenameWithoutPath>SEEKFREE_18TFT.c</FilenameWithoutPath>
-=======
-      <PathWithFileName>..\Libraries\app\OLED_I2C.c</PathWithFileName>
-      <FilenameWithoutPath>OLED_I2C.c</FilenameWithoutPath>
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -522,7 +509,6 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-<<<<<<< HEAD
       <PathWithFileName>..\Libraries\seekfree\SEEKFREE_28LCD.c</PathWithFileName>
       <FilenameWithoutPath>SEEKFREE_28LCD.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
@@ -663,8 +649,6 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-=======
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
       <PathWithFileName>..\Libraries\app\PID.c</PathWithFileName>
       <FilenameWithoutPath>PID.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
@@ -679,13 +663,8 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-<<<<<<< HEAD
       <GroupNumber>5</GroupNumber>
       <FileNumber>35</FileNumber>
-=======
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>24</FileNumber>
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -696,13 +675,8 @@
       <bShared>0</bShared>
     </File>
     <File>
-<<<<<<< HEAD
       <GroupNumber>5</GroupNumber>
       <FileNumber>36</FileNumber>
-=======
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>25</FileNumber>
->>>>>>> c5d0ae82c83cdf50d6176d8ce485a6e790ada189
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

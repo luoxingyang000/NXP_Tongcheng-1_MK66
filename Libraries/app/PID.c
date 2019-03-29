@@ -1,6 +1,6 @@
 #include "PID.h"
 #include "math.h"
-//---------------------------------------------------------------------------------------------------------------------------Æû³µÈËÈ«Éí±ä£¡£¡£¡ß÷ß÷ß÷ß÷
+//---------------------------------------------------------------------------------------------------------------------------æ±½è½¦äººå…¨èº«å˜ï¼ï¼ï¼å–µå–µå–µå–µ
 static uint16_t BetaGeneration(float error,float epsilon)
 {
 	uint16_t beta = 0;
@@ -11,14 +11,14 @@ static uint16_t BetaGeneration(float error,float epsilon)
 	return beta;
 }
 
-void PIDgegulation(PID *vPID,float processValue)//PID¿ØÖÆÆ÷
+void PIDgegulation(PID *vPID,float processValue)//PIDæ§åˆ¶å™¨
 {
 	float thisError;
 	float increment;
 	float pError,dError,iError;
 	uint16_t beta;
 	
-	thisError = vPID->setpoint-processValue;//µÃµ½Æ«²îÖµ
+	thisError = vPID->setpoint-processValue;//å¾—åˆ°åå·®å€¼
 	pError = thisError-vPID->lasterror;
 	iError = thisError;
 	dError = thisError-2*(vPID->lasterror)+vPID->preerror;
@@ -26,13 +26,13 @@ void PIDgegulation(PID *vPID,float processValue)//PID¿ØÖÆÆ÷
 	beta = BetaGeneration(thisError,vPID->epilson);
 	if(beta > 0)
 	{
-		increment= vPID->propertiongain*pError+vPID->derivativegain*dError;//ÔöÁ¿¼ÆËã
+		increment= vPID->propertiongain*pError+vPID->derivativegain*dError;//å¢é‡è®¡ç®—
 	}
 	else
 	{
-		increment= vPID->propertiongain*pError+vPID->integrlgain*iError+vPID->derivativegain*dError;//ÔöÁ¿¼ÆËã
+		increment= vPID->propertiongain*pError+vPID->integrlgain*iError+vPID->derivativegain*dError;//å¢é‡è®¡ç®—
 	}
-	vPID->preerror=vPID->lasterror;//´æ·ÅÆ«²î£¬ÓÃÓÚÏÂ´Î¼ÆËã
+	vPID->preerror=vPID->lasterror;//å­˜æ”¾åå·®ï¼Œç”¨äºä¸‹æ¬¡è®¡ç®—
 	vPID->lasterror= thisError;
 	vPID->result+=increment;
 	if(vPID->result > 1000)vPID->result = 500;
@@ -43,15 +43,15 @@ PID dianji_1;
 PID dianji_2;
 extern uint32_t date_1,date_2 ;
 
-void PID_init()//³õÊ¼»¯µç»ú
+void PID_init()//åˆå§‹åŒ–ç”µæœº
 {
-//---------------------------------------------µç»ú1¿É°®µÄĞ¡Î²°Í	
+//---------------------------------------------ç”µæœº1å¯çˆ±çš„å°å°¾å·´	
 		ftm_pwm_init(ftm0,ftm_ch0,15000,0);
 		ftm_pwm_init(ftm0,ftm_ch1,15000,0);
-//---------------------------------------------µç»ú2±ÉÊÓÂ¥ÉÏ¶ñÒâÂôÃÈ	
+//---------------------------------------------ç”µæœº2é„™è§†æ¥¼ä¸Šæ¶æ„å–èŒ	
 		ftm_pwm_init(ftm0,ftm_ch2,15000,0);
 		ftm_pwm_init(ftm0,ftm_ch3,15000,0);
-//---------------------------------------------PID¿ØÖÆÆ÷Ä¬Ä¬³Ô¹Ï	
+//---------------------------------------------PIDæ§åˆ¶å™¨é»˜é»˜åƒç“œ	
 		dianji_1.propertiongain = 1;//P
 		dianji_1.integrlgain = 1;//I
 		dianji_1.propertiongain = 1;//D
@@ -60,14 +60,14 @@ void PID_init()//³õÊ¼»¯µç»ú
 		dianji_2.integrlgain = 1;//I
 		dianji_2.propertiongain = 1;//D
 	
-		dianji_1.setpoint = 300;//ÉèÖÃÖµ
+		dianji_1.setpoint = 300;//è®¾ç½®å€¼
 		dianji_2.setpoint = 300;
 	
-		dianji_1.epilson = 300;//Î¢·ÖÒıÈëãĞÖµ
+		dianji_1.epilson = 300;//å¾®åˆ†å¼•å…¥é˜ˆå€¼
 		dianji_2.epilson = 300;//
 }
 
-void PID_fun()//¿ØÖÆµç»ú
+void PID_fun()//æ§åˆ¶ç”µæœº
 {
 		PIDgegulation(&dianji_1,date_1/1024/30);
 		PIDgegulation(&dianji_2,date_2/1024/30);

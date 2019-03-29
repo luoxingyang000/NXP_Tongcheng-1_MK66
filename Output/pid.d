@@ -49,6 +49,5 @@
 ..\output\pid.o: ..\Libraries\seekfree\SEEKFREE_MMA8451.h
 ..\output\pid.o: ..\Libraries\seekfree\SEEKFREE_MPU6050.h
 ..\output\pid.o: ..\Libraries\seekfree\SEEKFREE_28LCD.h
-..\output\pid.o: ..\Libraries\app\OLED_I2C.h
 ..\output\pid.o: ..\Libraries\app\PID.h
 ..\output\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
