@@ -39,8 +39,8 @@
 #define UART3_RX_PIN    B10       //B10、C16、E5
 #define UART3_TX_PIN    B11       //B11、C17、E4
 
-#define UART4_RX_PIN    C14       //C14、E25
-#define UART4_TX_PIN    C15       //C15、E24
+#define UART4_RX_PIN    E25       //C14、E25
+#define UART4_TX_PIN    E24       //C15、E24
 
 //-----------------------------------  FTM  -----------------------------------
 
@@ -70,7 +70,7 @@
 #define FTM3_CH3_PIN    E8        //D3 
 #define FTM3_CH4_PIN    E9        //C8 
 #define FTM3_CH5_PIN    E10       //C9 
-#define FTM3_CH6_PIN    E11       //C10
+#define FTM3_CH6_PIN    C10       //C10
 #define FTM3_CH7_PIN    E12       //C11          
 
 //正交解码模块通道      端口      可选范围                建议
@@ -87,8 +87,8 @@
 #define I2C0_SCL_PIN    B2        // B0、B2、D8
 #define I2C0_SDA_PIN    B3        // B1、B3、D9
 
-#define I2C1_SCL_PIN    C10       // E1、C10
-#define I2C1_SDA_PIN    C11       // E0、C11
+#define I2C1_SCL_PIN    E1       // E1、C10
+#define I2C1_SDA_PIN    E0       // E0、C11
 
 
 //-----------------------------------  SPI  -----------------------------------

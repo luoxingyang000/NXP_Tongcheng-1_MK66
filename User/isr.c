@@ -22,6 +22,8 @@
 
 #include "isr.h"
 
+extern unsigned int sysTickCnt[10];
+
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      PROTA中断执行函数
 //  @return     void   
@@ -209,6 +211,11 @@ Reserved108_IRQHandler
 Reserved109_IRQHandler
 SWI_IRQHandler 
 */
-                
-
+              
+void SysTick_Handler(void)
+{
+		uint8 i;
+    for(i=0;i<(sizeof(sysTickCnt)/sizeof(sysTickCnt[0]));i++)
+		{sysTickCnt[i]++;}	//时基累加
+}
 

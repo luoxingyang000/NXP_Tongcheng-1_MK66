@@ -46,7 +46,8 @@ extern void    i2c_write_reg(I2Cn_e, uint8 SlaveID, uint8 reg, uint8 Data);     
 extern uint8   i2c_read_reg (I2Cn_e, uint8 SlaveID, uint8 reg);                  //读取寄存器的数据
 extern uint8   i2c_read_reg_bytes(I2Cn_e i2cn, uint8 SlaveID, uint8 reg, uint8 num, uint8 * addr);
 
-
+void i2c_sonic_trig(void);
+unsigned int i2c_sonic_get(void);
 
 
 #endif

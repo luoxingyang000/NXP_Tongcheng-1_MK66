@@ -300,3 +300,36 @@ void i2c_write_reg(I2Cn_e i2cn, uint8 SlaveID, uint8 reg, uint8 Data)
     i2c_delay();                                        //延时太短的话，可能写出错
 }
 
+void i2c_sonic_trig(void)
+{
+    i2c_Start(i2c1);
+    i2c_write_byte(i2c1,0xe0);
+    i2c_write_byte(i2c1,0x51); 
+    i2c_Stop(i2c1);
+    i2c_delay();
+}
+
+unsigned int i2c_sonic_get(void)
+{
+    uint8 REGDAT[2]={0,0},result;
+    i2c_Start(i2c1);
+    i2c_write_byte(i2c1,0xe1);
+    i2c_EnterRxMode(i2c1); 
+    result = I2CN[i2c1]->D;                         
+    i2c_Wait(i2c1);                                 
+    REGDAT[0] = I2CN[i2c1]->D;                         
+    i2c_delay();  
+    result = I2CN[i2c1]->D;                         
+    i2c_Wait(i2c1);                                 
+    REGDAT[1] = I2CN[i2c1]->D;                         
+    i2c_delay();        
+    i2c_DisableAck(i2c1);
+    i2c_PutinRxMode(i2c1);
+    result = I2CN[i2c1]->D;                         
+    i2c_Wait(i2c1);                               
+    i2c_Stop(i2c1); 
+    REGDAT[1] = I2CN[i2c1]->D; 
+    i2c_delay();    
+    result = (REGDAT[0]<<8)+REGDAT[1];  
+    return result;                    
+}

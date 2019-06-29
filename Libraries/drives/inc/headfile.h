@@ -71,4 +71,7 @@
 #include "PID.h"
 //#include "LQMT9V034.h"
 
+void vchange(uint16 vleft, uint16 vright, uint16 dir);
+void sysInit(void);
+
 #endif

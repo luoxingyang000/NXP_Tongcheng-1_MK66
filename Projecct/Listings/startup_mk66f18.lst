@@ -1176,10 +1176,9 @@ ARM Macro Assembler    Page 19
 
 erwork --depend=..\output\startup_mk66f18.d -o..\output\startup_mk66f18.o -I.\R
 TE\_ULuo_MK66FX -IC:\Keil_v5\ARM\PACK\Keil\Kinetis_K60_DFP\1.5.0\Device\Include
- -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__MICR
-OLIB SETA 1" --predefine="__UVISION_VERSION SETA 525" --predefine="MK66FX1M0xxx
-18 SETA 1" --list=.\listings\startup_mk66f18.lst ..\Libraries\startup\DeviceSup
-port\startup_MK66F18.s
+ -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="__
+UVISION_VERSION SETA 525" --predefine="MK66FX1M0xxx18 SETA 1" --list=.\listings
+\startup_mk66f18.lst ..\Libraries\startup\DeviceSupport\startup_MK66F18.s
 
 
 
@@ -2822,4 +2821,4 @@ Symbol: __main
       At line 504 in file ..\Libraries\startup\DeviceSupport\startup_MK66F18.s
 Comment: __main used once
 2 symbols
-490 symbols in table
+489 symbols in table

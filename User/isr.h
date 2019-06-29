@@ -28,4 +28,9 @@ void PORTA_IRQHandler(void);
 void PORTB_IRQHandler(void);
 void PORTD_IRQHandler(void);
 void PIT0_IRQHandler(void);
+
+void FTM3_IRQHandler(void);
+
+void SysTick_Handler(void);
+
 #endif

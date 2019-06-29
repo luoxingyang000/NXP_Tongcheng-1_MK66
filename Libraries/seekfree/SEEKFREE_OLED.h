@@ -37,9 +37,9 @@
 
 //----宏定义OLED引脚----	 
 #define  OLED_SCL_PIN	C16 //A15	//龙邱MK66母板板载OLED接口
-#define  OLED_SDA_PIN	C15 //A16
-#define  OLED_RST_PIN	C14
-#define  OLED_DC_PIN	C13
+#define  OLED_SDA_PIN	C17 //A16
+#define  OLED_RST_PIN	C18
+#define  OLED_DC_PIN	C19
 //#define  OLED_CS_PIN	E4
 
 
